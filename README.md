@@ -9,6 +9,10 @@ We just keep
 
 You can download the final from this git. As they release new version, just copy 2 folders "js/src" & "sass", of course in case they do not change the build process.
 
+
+===
+
+
 After download bootstrap 4 source, we run install
 
 ``
@@ -40,3 +44,14 @@ $ npm config set python C:\Users\\*USER-NAME*\\.windows-build-tools\python27\pyt
 ``
 
 Now you can start "npm install" and get the results.
+
+
+===
+
+When everything's okay, just run 
+
+``
+$ npm run dist
+``
+the results will be in "dist" folder.
+
