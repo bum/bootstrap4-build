@@ -1,3 +1,9 @@
+The bootstrap 4.1 download from https://github.com/twbs/bootstrap/tree/v4.1.0 includes too many files/folders that we do not need: \_data, \_includes, \_layouts, assests, dist, docs, nuget... 
+
+We just keep 
+* the folder "**js/src**" (remove js/dist, js/tests) and 
+* folder "**scss**".
+
 After download bootstrap 4 source, we run install
 
 ``
