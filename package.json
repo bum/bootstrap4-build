@@ -20,7 +20,7 @@
     "bundlesize": "bundlesize",
     "css": "npm-run-all --parallel css-compile* --sequential css-prefix* css-minify*",
     "css-main": "npm-run-all --parallel css-compile --sequential css-prefix css-minify",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-app.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css",
     "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
     "js": "npm-run-all js-compile js-minify",
@@ -28,15 +28,15 @@
     "js-compile": "npm-run-all --parallel js-compile-*",
     "js-compile-standalone": "rollup --environment BUNDLE:false --config build/rollup.config.js --sourcemap",
     "js-compile-bundle": "rollup --environment BUNDLE:true --config build/rollup.config.js --sourcemap",
-    "js-compile-plugins": "cross-env PLUGINS=true babel js/src/ --out-dir js/dist/ --source-maps",
-    "js-compile-plugins-coverage": "cross-env PLUGINS=true NODE_ENV=test babel js/src/ --out-dir js/coverage/dist/ --source-maps",
+    "js-compile-plugins": "cross-env PLUGINS=true babel js/src/ --out-dir dist/js --source-maps",
+    "js-compile-plugins-coverage": "cross-env PLUGINS=true NODE_ENV=test babel js/src/ --out-dir dist/js/coverage/dist/ --source-maps",
     "js-minify": "npm-run-all --parallel js-minify-*",
     "js-minify-standalone": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/bootstrap.js.map,includeSources,url=bootstrap.min.js.map\" --output dist/js/bootstrap.min.js dist/js/bootstrap.js",
     "js-minify-bundle": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/bootstrap.bundle.js.map,includeSources,url=bootstrap.bundle.min.js.map\" --output dist/js/bootstrap.bundle.min.js dist/js/bootstrap.bundle.js",
     "dist": "npm-run-all --parallel css js"
   },
-  "style": "dist/css/bootstrap.css",
-  "sass": "scss/bootstrap.scss",
+  "style": "dist/css/app.css",
+  "sass": "scss/bootstrap-app.scss",
   "main": "dist/js/bootstrap",
   "repository": {
     "type": "git",
@@ -83,16 +83,14 @@
     "shx": "^0.2.2",
     "sinon": "^4.4.6",
     "sri-toolbox": "^0.2.0",
-    "uglify-js": "^3.3.16",
-    "vnu-jar": "^17.11.1",
-    "workbox-build": "^3.0.0"
+    "uglify-js": "^3.3.16"
   },
   "engines": {
     "node": ">=6"
   },
   "files": [
     "dist/",
-    "js/{src,dist}/",
+    "js/{src}/",
     "scss/"
   ],
   "browserslist": [
