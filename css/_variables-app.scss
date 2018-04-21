@@ -9,7 +9,7 @@
 //
 
 // stylelint-disable
-$white:    #f7f8f9 !default;
+$white:    #ffffff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -319,7 +319,7 @@ $table-head-color:            $gray-700 !default;
 $table-dark-bg:               $gray-900 !default;
 $table-dark-accent-bg:        rgba($white, .05) !default;
 $table-dark-hover-bg:         rgba($white, .075) !default;
-$table-dark-border-color:     lighten($gray-900, 7.5%) !default;
+$table-dark-border-color:     lighten($gray-400, 7.5%) !default;
 $table-dark-color:            $body-bg !default;
 
 $table-striped-order:         odd !default;
